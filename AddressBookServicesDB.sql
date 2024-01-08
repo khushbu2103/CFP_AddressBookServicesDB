@@ -3,8 +3,9 @@
 -- UC1 Create addressbook services database 
 create database AddressBookServicesDB;
 use AddressBookServicesDB;
--- UC2-
-CREATE TABLE  Customer(Customer_Id INT AUTO_INCREMENT PRIMARY KEY,
+
+-- UC2 create addressbook table
+CREATE TABLE  AddressbookTable(Customer_Id INT AUTO_INCREMENT PRIMARY KEY,
 FirstName varchar(225), 
 LastName varchar(225),
 Address varchar(225),
@@ -13,4 +14,11 @@ State varchar(50),
 Zip varchar (10),
 PhoneNumber bigint (10),
 Email varchar(50));
-SELECT * FROM Customer;
+SELECT * FROM AddressbookTable;
+
+-- UC3 Insert new contact in addressbook table  
+insert into AddressbookTable values(1, 'khushi', 'soni', 'nandanvan', 'deesa', 'gujrat', 1234, 946097654, 'khushi@gmail.com ');
+insert into AddressbookTable values(2, 'twiney', 'soni', 'nandanvan', 'pali', 'rajasthan', 1234, 946097654, 'khushi@gmail.com ');
+insert into AddressbookTable values(3, 'thia', 'soni', 'thane', 'mumbai', 'maharastra', 12674, 946677654, '213@gmail.com ');
+insert into AddressbookTable values(last_insert_id(), 'raj', 'soni', 'ramnagar', 'palanpur', 'gujrat', 8774, 946677654, '213@gmail.com ');
+SELECT * FROM AddressbookTable;
