@@ -17,10 +17,12 @@ Email varchar(50));
 SELECT * FROM AddressbookTable;
 
 -- UC3 Insert new contact in addressbook table  
-insert into AddressbookTable values(1, 'khushi', 'soni', 'nandanvan', 'deesa', 'gujrat', 1234, 946097654, 'khushi@gmail.com ');
-insert into AddressbookTable values(2, 'twiney', 'soni', 'nandanvan', 'pali', 'rajasthan', 1234, 946097654, 'khushi@gmail.com ');
-insert into AddressbookTable values(3, 'thia', 'soni', 'thane', 'mumbai', 'maharastra', 12674, 946677654, '213@gmail.com ');
-insert into AddressbookTable values(last_insert_id(), 'raj', 'soni', 'ramnagar', 'palanpur', 'gujrat', 8774, 946677654, '213@gmail.com ');
+insert into AddressbookTable(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email) values('khushi', 'soni', 'nandanvan', 'deesa', 'gujrat', 1234, 946097654, 'khushi@gmail.com '),
+('twiney', 'soni', 'nandanvan', 'pali', 'rajasthan', 1234, 946097654, 'khushi@gmail.com '),
+('thia', 'soni', 'thane', 'mumbai', 'maharastra', 12674, 946677654, '213@gmail.com '),
+('raj', 'soni', 'ramnagar', 'palanpur', 'gujrat', 8774, 946677654, '213@gmail.com '),
+( 'priya', 'gehlot', 'shivnagar', 'deesa', 'gujrat', 1234, 946097654, 'priya@gmail.com '),
+('nitin', 'jain', 'shivnagar', 'deesa', 'gujrat', 1234, 946097654, 'nitin@gmail.com ');
 SELECT * FROM AddressbookTable;
 
 -- UC4 Edit contact using first name
@@ -30,10 +32,11 @@ SET FirstName = 'ankit',
     Address = 'rajatnagar',
     PhoneNumber = 9876543287,
     Email = 'ankit@gmail.com'
-WHERE FirstName = 'twiney' AND Customer_Id = 2;
+WHERE FirstName = 'twiney';
 
+SET SQL_SAFE_UPDATES=0;
 -- UC5 Delete contact using name
-delete from AddressBookTable where FirstName = 'thia' AND Customer_Id = 3; 
+delete from AddressBookTable where FirstName = 'thia'; 
 
 -- UC6 Retrieve contact by city or state
 SELECT * FROM AddressbookTable where City = 'deesa';
@@ -42,3 +45,9 @@ SELECT * FROM AddressbookTable where City = 'deesa';
 SELECT City, State, COUNT(*) AS AddressBookSize
 FROM AddressBookTable
 GROUP BY City, State;
+
+-- UC8 Retrieve entries sorted alphabetically by Person’s name for a given city 
+SELECT FirstName, LastName, City
+FROM AddressBookTable
+WHERE City = 'deesa'
+ORDER BY FirstName;
