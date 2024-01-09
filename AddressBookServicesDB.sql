@@ -51,3 +51,22 @@ SELECT FirstName, LastName, City
 FROM AddressBookTable
 WHERE City = 'deesa'
 ORDER BY FirstName;
+
+-- UC9 identify each Address Book with name and Type.
+ALTER TABLE AddressBookTable
+ADD COLUMN Type VARCHAR(50);
+UPDATE AddressBookTable
+SET Type = 'Family'
+WHERE FirstName = 'khushi';
+UPDATE AddressBookTable
+SET Type = 'Family'
+WHERE FirstName = 'raj';
+UPDATE AddressBookTable
+SET Type = 'Friends'
+WHERE FirstName = 'nitin';
+UPDATE AddressBookTable
+SET Type = 'Profession'
+WHERE FirstName = 'priya';
+UPDATE AddressBookTable
+SET Type = 'Friends'
+WHERE FirstName = 'ankit';
