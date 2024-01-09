@@ -22,3 +22,12 @@ insert into AddressbookTable values(2, 'twiney', 'soni', 'nandanvan', 'pali', 'r
 insert into AddressbookTable values(3, 'thia', 'soni', 'thane', 'mumbai', 'maharastra', 12674, 946677654, '213@gmail.com ');
 insert into AddressbookTable values(last_insert_id(), 'raj', 'soni', 'ramnagar', 'palanpur', 'gujrat', 8774, 946677654, '213@gmail.com ');
 SELECT * FROM AddressbookTable;
+
+-- UC4 Edit contact using first name
+UPDATE AddressBookTable
+SET FirstName = 'ankit',
+    LastName = 'jain',
+    Address = 'rajatnagar',
+    PhoneNumber = 9876543287,
+    Email = 'ankit@gmail.com'
+WHERE FirstName = 'twiney' AND Customer_Id = 2;
