@@ -31,3 +31,6 @@ SET FirstName = 'ankit',
     PhoneNumber = 9876543287,
     Email = 'ankit@gmail.com'
 WHERE FirstName = 'twiney' AND Customer_Id = 2;
+
+-- UC5 Delete contact using name
+delete from AddressBookTable where FirstName = 'thia' AND Customer_Id = 3; 
