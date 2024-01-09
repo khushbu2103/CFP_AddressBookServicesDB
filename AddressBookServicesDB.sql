@@ -37,3 +37,8 @@ delete from AddressBookTable where FirstName = 'thia' AND Customer_Id = 3;
 
 -- UC6 Retrieve contact by city or state
 SELECT * FROM AddressbookTable where City = 'deesa';
+
+-- UC7 find the size of table
+SELECT City, State, COUNT(*) AS AddressBookSize
+FROM AddressBookTable
+GROUP BY City, State;
