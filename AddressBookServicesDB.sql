@@ -70,3 +70,8 @@ WHERE FirstName = 'priya';
 UPDATE AddressBookTable
 SET Type = 'Friends'
 WHERE FirstName = 'ankit';
+
+-- UC10 get number of contact persons i.e. count by type
+SELECT Type, COUNT(*) AS AddressBookSize
+FROM AddressBookTable
+GROUP BY Type;
