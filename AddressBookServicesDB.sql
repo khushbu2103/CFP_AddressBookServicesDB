@@ -75,3 +75,6 @@ WHERE FirstName = 'ankit';
 SELECT Type, COUNT(*) AS AddressBookSize
 FROM AddressBookTable
 GROUP BY Type;
+
+-- UC11 add person to both Friend and Family
+insert into AddressbookTable(FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email, Type) values('khushi', 'soni', 'nandanvan', 'deesa', 'gujrat', 1234, 946097654, 'khushi@gmail.com ', 'Friends');
